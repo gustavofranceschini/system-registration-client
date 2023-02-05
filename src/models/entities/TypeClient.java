@@ -9,6 +9,8 @@ public class TypeClient implements Serializable{
 	private Integer id;
 	private String type; //Fisic or Juridic
 	
+	public TypeClient() {};
+	
 	public TypeClient(Integer id, String type) {
 		this.id = id;
 		this.type = type;

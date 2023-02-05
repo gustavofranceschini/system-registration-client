@@ -8,7 +8,7 @@ public interface TypeClientDao {
 	
 	void insert(TypeClient obj);
 	void update(TypeClient obj);
-	void findById(Integer id);
+	TypeClient findById(Integer id);
 	TypeClient deleteById(Integer id);
 	List<TypeClient> findAll();
 }
