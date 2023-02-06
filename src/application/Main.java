@@ -47,6 +47,14 @@ public class Main {
 ////			System.out.println(tp);
 ////		}
 		
+		System.out.println("-- Testing 5 :  TypeClient --> Update --");
+		TypeClient tp2 = typeClientDao.findById(1);
+		tp2.setType("Pessoa Jurídica");
+		typeClientDao.update(tp2);
+		System.out.println("Update Completed!");
+		System.out.println(tp2);
+		
+		
 		
 		sc.close();
 
