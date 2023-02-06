@@ -28,6 +28,24 @@ public class Main {
 			System.out.println(tp);
 		}		
 		
+		System.out.println();
+//		
+//		System.out.println("-- Testing 3 :  TypeClient --> Insert --");
+//		TypeClient tp1 = new TypeClient(null, "Pessoa Jurídica");
+//		typeClientDao.insert(tp1);
+//		for (TypeClient tp : list) {
+//			System.out.println(tp);
+//		}		
+//		
+		
+		
+//		System.out.println("-- Testing 4 : TypeClient --> deleteById --");
+//		typeClientDao.deleteById(2);
+//		System.out.println("Delete completed!! ");
+////		System.out.println("List of type client:");
+////		for (TypeClient tp : list) {
+////			System.out.println(tp);
+////		}
 		
 		
 		sc.close();
