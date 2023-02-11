@@ -7,7 +7,7 @@ import model.dao.DaoFactory;
 import model.dao.TypeClientDao;
 import models.entities.TypeClient;
 
-public class Main {
+public class MainTypeClient {
 
 	public static void main(String[] args) {
 		

@@ -7,7 +7,7 @@ import model.dao.impl.TypeClientDaoJDBC;
 public class DaoFactory {
 	
 	public static ClientDao createClientDao() {
-		return new ClientDaoJDBC();
+		return new ClientDaoJDBC(DB.getConnection());
 	}
 	
 	public static TypeClientDao createTypeClientDao() {

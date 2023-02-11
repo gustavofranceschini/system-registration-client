@@ -6,9 +6,9 @@ import models.entities.TypeClient;
 
 public interface TypeClientDao {
 	
-	void insert(TypeClient obj);
-	void update(TypeClient obj);
-	TypeClient findById(Integer id);
+	void insert(TypeClient typeClient);
+	void update(TypeClient typeClient);
 	void deleteById(Integer id);
+	TypeClient findById(Integer id);	
 	List<TypeClient> findAll();
 }

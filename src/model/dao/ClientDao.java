@@ -6,10 +6,10 @@ import models.entities.Client;
 
 public interface ClientDao {
 	
-	void insert(Client obj);
-	void update(Client obj);
-	void findById(Integer id);
-	Client deleteById(Integer id);
+	void insert(Client client);
+	void update(Client client);
+	void deleteById(Integer id);
+	Client findById(Integer id);	
 	List<Client> findAll();
 	
 }

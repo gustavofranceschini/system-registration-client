@@ -22,7 +22,7 @@ public class TypeClientDaoJDBC implements TypeClientDao {
 	}
 
 	@Override
-	public void insert(TypeClient obj) {
+	public void insert(TypeClient typeClient) {
 		PreparedStatement st = null;
 		
 		try {
@@ -32,7 +32,7 @@ public class TypeClientDaoJDBC implements TypeClientDao {
 					+ "values (?)",Statement.RETURN_GENERATED_KEYS					
 					);
 			
-			st.setString(1, obj.getType());
+			st.setString(1, typeClient.getType());
 			
 			int rowsAffected = st.executeUpdate();
 			
@@ -40,7 +40,7 @@ public class TypeClientDaoJDBC implements TypeClientDao {
 				ResultSet rs = st.getGeneratedKeys();
 				if (rs.next()) {
 					int id = rs.getInt(1);
-					obj.setId(id);
+					typeClient.setId(id);
 				} else {
 					throw new DbException("Unexpected Error! No rows affected!");
 				}
@@ -57,7 +57,7 @@ public class TypeClientDaoJDBC implements TypeClientDao {
 	}
 
 	@Override
-	public void update(TypeClient obj) {
+	public void update(TypeClient typeClient) {
 		
 		PreparedStatement st = null;
 		
@@ -66,8 +66,8 @@ public class TypeClientDaoJDBC implements TypeClientDao {
 					"update typeclient set type = ? "
 					+ "where id = ?"
 					);
-			st.setString(1, obj.getType());
-			st.setInt(2, obj.getId());
+			st.setString(1, typeClient.getType());
+			st.setInt(2, typeClient.getId());
 			
 			int rowsAffected = st.executeUpdate();
 			

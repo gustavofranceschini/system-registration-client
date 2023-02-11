@@ -59,6 +59,6 @@ public class TypeClient implements Serializable{
 
 	@Override
 	public String toString() {
-		return "TypeClient [id=" + id + ", type=" + type + "]";
+		return "Type Client --> ID: " + id + ", Type: " + type;
 	}
 }

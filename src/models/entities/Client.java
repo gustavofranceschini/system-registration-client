@@ -14,6 +14,8 @@ public class Client implements Serializable {
 	private Date birthDate;
 	
 	private TypeClient typeClient;
+	
+	public Client() {};
 
 	public Client(Integer id, String name, Integer rg, Integer cpf, Date birthDate, TypeClient typeClient) {
 		this.id = id;
@@ -98,8 +100,8 @@ public class Client implements Serializable {
 	}
 
 	@Override
-	public String toString() {
-		return "Client [id=" + id + ", name=" + name + ", rg=" + rg + ", cpf=" + cpf + ", birthDate=" + birthDate
-				+ ", typeClient=" + typeClient + "]";
+	public String toString() {				
+		return "Client --> ID: " + id + ", Name: " + name + ", RG: " + rg + ", CPF: " + cpf + ", Birth Date: " + birthDate
+				+ ", Type Client: " + typeClient;
 	}
 }
