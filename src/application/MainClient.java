@@ -45,17 +45,23 @@ public class MainClient {
 			System.out.println(c);
 		}
 		
+//		System.out.println();
+//		System.out.println("--- Testing 4: Client --> DeleteById ---");
+//		System.out.print("Enter id client for delete: ");
+//		int idClientForDelete = sc.nextInt();
+//		clientDao.deleteById(idClientForDelete);	
+//		
 		System.out.println();
-		System.out.println("--- Testing 4: Client --> DeleteById ---");
-		System.out.print("Enter id client for delete: ");
-		int idClientForDelete = sc.nextInt();
-		clientDao.deleteById(idClientForDelete);		
-		
-		
-		
-		
-		
-
+		System.out.println("--- Testing 5: Client --> Update ---=");
+		System.out.print("Enter id client for update: ");
+		int idClientForUpdate = sc.nextInt();
+		Client c2 = clientDao.findById(idClientForUpdate);
+		System.out.println(c2);
+		System.out.print("Enter new modification 'Name': ");
+		sc.nextLine();
+		c2.setName(sc.nextLine());
+		clientDao.update(c2);
+		System.out.println(c2);
 		
 		
 		sc.close();

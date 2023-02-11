@@ -7,14 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import db.DB;
 import db.DbException;
-import db.DbIntegrityException;
 import model.dao.ClientDao;
 import models.entities.Client;
 import models.entities.TypeClient;
@@ -71,6 +69,29 @@ public class ClientDaoJDBC implements ClientDao {
 	public void update(Client client) {
 		
 		PreparedStatement st = null;
+		
+		try {
+			st = conn.prepareStatement(
+					
+					"update client set name = ? where id = ?"
+					
+					);
+			
+			st.setString(1, client.getName());
+			st.setObject(2, client.getId());
+			
+			int rowsAffect  = st.executeUpdate();
+			
+			if (rowsAffect == 0) {
+				throw new DbException("None rows affected !");
+			}
+		}
+		catch (SQLException e) {
+			throw new DbException(e.getMessage());
+		} 
+		finally {
+			DB.closeStatement(st);
+		}
 		
 		
 		
